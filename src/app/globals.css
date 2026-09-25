@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Big Shoulders Display", "Inter", system-ui, sans-serif;
+
+  --color-brand-red: #e10600;
+  --color-brand-cream: #f8f4ec;
+  --color-brand-dark: #0e0e0e;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+
+  --animate-marquee: marquee-x 28s linear infinite;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(100% 0 0);
+  --foreground: oklch(12.9% 0.042 264.695);
+  --border: oklch(92.9% 0.013 255.508);
+}
+
+html,
+body {
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display,
+.display-civ,
+.display-civ-dark {
+  letter-spacing: -0.01em;
+  font-family: "Big Shoulders Display", Inter, system-ui, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+}
+
+img:not(.no-round) {
+  border-radius: 15px;
+}
+
+.display-civ {
+  text-transform: uppercase;
+  color: #e10600;
+  -webkit-text-stroke: 1px #fff;
+  text-shadow: 3px 3px #00000073;
+  line-height: 0.95;
+}
+
+@media (min-width: 768px) {
+  .display-civ {
+    -webkit-text-stroke: 2px #fff;
+    text-shadow: 5px 5px #00000073;
+  }
+}
+
+.display-civ-dark {
+  text-transform: uppercase;
+  color: #0e0e0e;
+  -webkit-text-stroke: 1px #f8f4ec;
+  text-shadow: 4px 4px #e10600;
+  line-height: 0.95;
+}
+
+.checker-red {
+  background-color: #f8f4ec;
+  background-image:
+    linear-gradient(45deg, #e10600 25%, #0000 25%),
+    linear-gradient(-45deg, #e10600 25%, #0000 25%),
+    linear-gradient(45deg, #0000 75%, #e10600 75%),
+    linear-gradient(-45deg, #0000 75%, #e10600 75%);
+  background-position: 0 0, 0 14px, 14px -14px, -14px 0;
+  background-size: 28px 28px;
+}
+
+.checker-red-bg {
+  background-color: #e10600;
+  background-image:
+    linear-gradient(45deg, #00000014 25%, #0000 25%),
+    linear-gradient(-45deg, #00000014 25%, #0000 25%),
+    linear-gradient(45deg, #0000 75%, #00000014 75%),
+    linear-gradient(-45deg, #0000 75%, #00000014 75%);
+  background-position: 0 0, 0 24px, 24px -24px, -24px 0;
+  background-size: 48px 48px;
+}
+
+@keyframes marquee-x {
+  0% {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(-50%);
+  }
+}
+
+.wavy-underline {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 6'><path d='M0 3 Q 5 0 10 3 T 20 3' stroke='%23E10600' stroke-width='1.5' fill='none'/></svg>");
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 10px 5px;
+  padding-bottom: 8px;
+}
